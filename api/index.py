@@ -21,7 +21,7 @@ FLAG_SSTI = os.environ.get('FLAG_SSTI', 'axios{default_ssti_flag}')
 FLAG_IDOR = os.environ.get('FLAG_IDOR', 'axios{default_idor_flag}')
 FLAG_PYJAIL = os.environ.get('FLAG_PYJAIL', 'axios{default_pyjail_flag}')
 
-app.config['Secret_Flag'] = Confidential(FLAG_SSTI)
+app.config['SecretFlag'] = Confidential(FLAG_SSTI)
 SUPER_SECRET_FLAG_6 = Confidential(FLAG_PYJAIL)
 
 # --- MOCK DATABASE ---
