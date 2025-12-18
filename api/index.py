@@ -5,6 +5,14 @@ import base64
 
 app = Flask(__name__, template_folder='../templates', static_folder='../static')
 
+class Confidential:
+    def __init__(self, secret):
+        self.secret = secret
+    def __repr__(self):
+        return "<Confidential Value>"
+    def __str__(self):
+        return self.secret
+
 # --- CONFIGURATION & FLAGS ---
 FLAG_COMMENT = os.environ.get('FLAG_COMMENT', 'axios{default_comment_flag}')
 FLAG_ROBOTS = os.environ.get('FLAG_ROBOTS', 'axios{default_robots_flag}')
@@ -13,8 +21,8 @@ FLAG_SSTI = os.environ.get('FLAG_SSTI', 'axios{default_ssti_flag}')
 FLAG_IDOR = os.environ.get('FLAG_IDOR', 'axios{default_idor_flag}')
 FLAG_PYJAIL = os.environ.get('FLAG_PYJAIL', 'axios{default_pyjail_flag}')
 
-app.config['SECRET_FLAG'] = FLAG_SSTI
-SUPER_SECRET_FLAG_6 = FLAG_PYJAIL
+app.config['SECRET_FLAG'] = Confidential(FLAG_SSTI)
+SUPER_SECRET_FLAG_6 = Confidential(FLAG_PYJAIL)
 
 # --- MOCK DATABASE ---
 USERS = {
@@ -185,14 +193,6 @@ def page_not_found(e):
     '''
     return render_template_string(template), 404
 
-# --- CALCULATOR HELPERS ---
-class Confidential:
-    def __init__(self, secret):
-        self.secret = secret
-    def __repr__(self):
-        return "<Confidential Value>"
-    def __str__(self):
-        return self.secret
 
 def is_safe_expression(expr):
     blacklist = [
