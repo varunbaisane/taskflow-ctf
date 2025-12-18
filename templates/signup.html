@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="glass p-8 rounded-xl shadow-2xl w-96">
+    <h1 class="text-3xl font-bold mb-6 text-center text-blue-400">Join TaskFlow</h1>
+    
+    {% if error %}
+    <div class="bg-red-500/20 text-red-200 p-3 rounded mb-4 text-sm text-center border border-red-500/50">
+        {{ error }}
+    </div>
+    {% endif %}
+
+    <form method="POST" action="/register" class="space-y-4">
+        <div>
+            <label class="block text-sm font-medium mb-1">Choose Username</label>
+            <input type="text" name="username" required class="w-full bg-slate-800 border border-slate-600 rounded p-2 focus:outline-none focus:border-blue-500" placeholder="username">
+        </div>
+        <div>
+            <label class="block text-sm font-medium mb-1">Choose Password</label>
+            <input type="password" name="password" required class="w-full bg-slate-800 border border-slate-600 rounded p-2 focus:outline-none focus:border-blue-500" placeholder="••••••">
+        </div>
+        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded transition">
+            Create Account
+        </button>
+    </form>
+    
+    <div class="mt-6 text-center">
+        <p class="text-sm text-slate-400">Already have an account?</p>
+        <a href="/login" class="text-blue-400 hover:underline text-sm">Login here</a>
+    </div>
+</div>
+{% endblock %}

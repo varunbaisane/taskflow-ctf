@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# Vercel
+.vercel/
+
+# Environment Variables (Keep your flags safe!)
+.env

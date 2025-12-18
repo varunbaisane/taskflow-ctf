@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="w-full max-w-4xl p-6">
+    <div class="flex justify-between items-center mb-8">
+        <h1 class="text-3xl font-bold text-blue-400">TaskFlow Dashboard</h1>
+        <div class="space-x-4">
+            <span class="text-slate-400">User: <span class="text-white">{{ user }}</span></span>
+            
+            <a href="/calculator" class="text-sm bg-purple-600 hover:bg-purple-500 px-3 py-1 rounded transition">Tools</a>
+            <a href="/admin" class="text-sm bg-slate-700 hover:bg-slate-600 px-3 py-1 rounded">Admin Panel</a>
+            <a href="/logout" class="text-sm text-red-400 hover:text-red-300">Logout</a>
+        </div>
+    </div>
+
+    <div class="glass rounded-xl p-6 mb-6">
+        <form action="/add_todo" method="POST" class="flex gap-4">
+            <input type="text" name="task" required placeholder="Add a new task..." 
+                   class="flex-1 bg-slate-800 border border-slate-600 rounded p-3 text-white focus:outline-none focus:border-blue-500">
+            <button type="submit" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded transition">
+                Add
+            </button>
+        </form>
+    </div>
+
+    <div class="glass rounded-xl p-6">
+        <h2 class="text-xl font-semibold mb-4 border-b border-slate-700 pb-2">Your To-Do List</h2>
+        
+        <div class="mb-4 flex gap-2">
+            <a href="/dashboard?uid={{ my_id }}" class="text-xs text-blue-300 hover:underline">Refresh My List</a>
+            <span class="text-xs text-slate-600">|</span>
+            <span class="text-xs text-slate-500">List ID: {{ my_id }}</span>
+        </div>
+
+        <ul class="space-y-3">
+            {% for todo in todos %}
+            <li class="flex items-center justify-between bg-slate-800/50 p-3 rounded hover:bg-slate-800 transition border border-slate-700/50 group">
+                <div onclick="toggleTask(this)" class="flex items-center gap-3 cursor-pointer select-none flex-1">
+                    <div class="task-checkbox w-6 h-6 rounded-full border-2 border-blue-500 flex items-center justify-center transition-all bg-transparent">
+                        <svg class="check-icon w-4 h-4 text-white opacity-0 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <span class="task-text transition-opacity text-slate-200">{{ todo }}</span>
+                </div>
+                {% if user == request.cookies.get('username') or my_id in request.url %}
+                <a href="/delete_todo/{{ loop.index0 }}" class="text-slate-600 hover:text-red-500 transition px-2 font-bold text-lg" title="Remove Item">&times;</a>
+                {% endif %}
+            </li>
+            {% else %}
+            <li class="text-slate-500 italic">No tasks found.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<script>
+function toggleTask(element) {
+    const checkbox = element.querySelector('.task-checkbox');
+    const checkIcon = element.querySelector('.check-icon');
+    const text = element.querySelector('.task-text');
+    const isChecked = !checkIcon.classList.contains('opacity-0');
+
+    if (!isChecked) {
+        checkIcon.classList.remove('opacity-0');
+        checkbox.classList.remove('bg-transparent');
+        checkbox.classList.add('bg-blue-500');
+        text.classList.add('line-through', 'text-slate-500');
+        text.classList.remove('text-slate-200');
+    } else {
+        checkIcon.classList.add('opacity-0');
+        checkbox.classList.add('bg-transparent');
+        checkbox.classList.remove('bg-blue-500');
+        text.classList.remove('line-through', 'text-slate-500');
+        text.classList.add('text-slate-200');
+    }
+}
+</script>
+{% endblock %}
