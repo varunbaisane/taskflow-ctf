@@ -88,3 +88,13 @@ Website: [https://taskflow-ctf.vercel.app/calculator](https://taskflow-ctf.verce
 
 ---
 
+### ⚙️ Running Locally
+
+If you wish to run this CTF locally for testing:
+
+1.  Clone the repository.
+2.  Install dependencies: `pip install -r requirements.txt`
+3.  Navigate to the `api` folder.
+4.  Run the app: `python index.py`
+5.  Terminal will have the link. `Running on http://127.0.0.1:<port>`.
+    If gives error, in `api/index.py` change the last line `app.run(debug=True)` to `app.run(debug=True, port=<port>)` and replace <port> with any port e.g. 8080, 5000.
