@@ -17,7 +17,6 @@ The application is a standard web app with user logins, a dashboard for managing
 Below are the 6 challenges hidden within the TaskFlow application. Good luck!
 
 ### 1. TaskFlow: Control Urself
-**Category:** Web Exploitation / Recon
 
 ### Description
  The developer dave seems careless and he comments on us. Can you find the flag they left during development?!?!
@@ -30,7 +29,6 @@ Website: [https://taskflow-ctf.vercel.app/](https://taskflow-ctf.vercel.app/)
 ---
 
 ### 2. TaskFlow: Mr. Roboto
-**Category:** Web / Standards
 
 ### Description
 Search engines are great, but sometimes we don't want them looking at our secret files.
@@ -42,7 +40,6 @@ Website: [https://taskflow-ctf.vercel.app/](https://taskflow-ctf.vercel.app/)
 ---
 
 ### 3. TaskFlow: Admin Loves Cookies
-**Category:** Broken Access Control (BAC)
 
 ### Description
 I can log in as a user, but the Admin panel says `Access Denied`.
@@ -54,8 +51,6 @@ Website: [https://taskflow-ctf.vercel.app/admin](https://taskflow-ctf.vercel.app
 ---
 
 ### 4. TaskFlow: Not Found
-**Category:** Server-Side Template Injection (SSTI)
-
 
 ### Description
 The 404 page echoes your input. Maybe it’s vulnerable?*
@@ -65,8 +60,6 @@ The 404 page echoes your input. Maybe it’s vulnerable?*
 ---
 
 ### 5. Challenge: Peeping
-**Category:** Insecure Direct Object Reference (IDOR)
-
 
 ### Description
 
@@ -85,7 +78,6 @@ Website: [https://taskflow-ctf.vercel.app/](https://taskflow-ctf.vercel.app/)
 ---
 
 ### 6. Challenge: Calculated Risk
-**Category:** PyJail / Sandbox Escape
 
 ### Description
 We added a new "Safe" calculator. It has a strict firewall to prevent hackers from stealing our secrets.
