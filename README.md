@@ -17,7 +17,7 @@ The application is a standard web app with user logins, a dashboard for managing
 Below are the 6 challenges hidden within the TaskFlow application. Good luck!
 
 ### 1. TaskFlow: Control Urself
-**Category:** Web Exploitation
+**Category:** Web Exploitation / Recon
 
 ### Description
  The developer dave seems careless and he comments on us. Can you find the flag they left during development?!?!
@@ -25,7 +25,7 @@ Below are the 6 challenges hidden within the TaskFlow application. Good luck!
 Website: [https://taskflow-ctf.vercel.app/](https://taskflow-ctf.vercel.app/)
 
 
-👉 **[View Writeup & Solution](./writeups/chall1_solution.md)**
+👉 **[View Writeup](./writeup/writeup.md)**
 
 ---
 
@@ -33,23 +33,23 @@ Website: [https://taskflow-ctf.vercel.app/](https://taskflow-ctf.vercel.app/)
 **Category:** Web / Standards
 
 ### Description
-"Search engines are great, but sometimes we don't want them looking at our secret files."
+Search engines are great, but sometimes we don't want them looking at our secret files.
 
 Website: [https://taskflow-ctf.vercel.app/](https://taskflow-ctf.vercel.app/)
 
-👉 **[View Writeup & Solution](./writeups/chall2_solution.md)**
+👉 **[View Writeup](./writeup/writeup.md)**
 
 ---
 
 ### 3. TaskFlow: Admin Loves Cookies
-**Category:** Web Exploitation
+**Category:** Broken Access Control (BAC)
 
 ### Description
 I can log in as a user, but the Admin panel says `Access Denied`.
 
 Website: [https://taskflow-ctf.vercel.app/admin](https://taskflow-ctf.vercel.app/admin)
 
-👉 **[View Writeup & Solution](./writeups/chall3_solution.md)**
+👉 **[View Writeup](./writeup/writeup.md)**
 
 ---
 
@@ -58,9 +58,9 @@ Website: [https://taskflow-ctf.vercel.app/admin](https://taskflow-ctf.vercel.app
 
 
 ### Description
-"The 404 page echoes your input. Maybe it’s vulnerable?"*
+The 404 page echoes your input. Maybe it’s vulnerable?*
 
-👉 **[View Writeup & Solution](./writeups/chall4_solution.md)**
+👉 **[View Writeup](./writeup/writeup.md)**
 
 ---
 
@@ -80,7 +80,7 @@ Do you think, something in the url looks fishy🐠???
 
 Website: [https://taskflow-ctf.vercel.app/](https://taskflow-ctf.vercel.app/)
 
-👉 **[View Writeup & Solution](./writeups/chall5_solution.md)**
+👉 **[View Writeup](./writeup/writeup.md)**
 
 ---
 
@@ -92,7 +92,7 @@ We added a new "Safe" calculator. It has a strict firewall to prevent hackers fr
 
 Website: [https://taskflow-ctf.vercel.app/calculator](https://taskflow-ctf.vercel.app/calculator)
 
-👉 **[View Writeup & Solution](./writeups/chall6_solution.md)**
+👉 **[View Writeup](./writeup/writeup.md)**
 
 ---
 
